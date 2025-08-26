@@ -1,0 +1,19 @@
+directories:
+  persist_directory: data/vectordb/processed/chroma
+  pdf_upload_directory: uploads/files/
+  pdf_file_name: inputs.pdf
+  markdown_output_directory: outputs/
+
+embedding_model_config:
+  model: BAAI/bge-base-en
+  encode_kwargs: { "normalize_embeddings": True }
+  model_kwargs: { "device": cpu }
+
+llm_config:
+  model_name: llama3-70b-8192
+
+splitter_config:
+  chunk_size: 1000
+  chunk_overlap: 500
+
+retreival_config: k:3
